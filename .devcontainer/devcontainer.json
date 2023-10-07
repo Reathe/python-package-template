@@ -10,6 +10,7 @@
 	// "forwardPorts": [],
 	// Use 'postCreateCommand' to run commands after the container is created.
 	"onCreateCommand": "python -m pip install --upgrade pip && python -m pip install 'flit>=3.8.0' && flit install --only-deps --deps develop",
+	"postStartCommand": "pre-commit install --install-hooks",
 	// Configure tool-specific properties.
 	"customizations": {
 		"vscode": {
