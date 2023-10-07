@@ -5,7 +5,7 @@ build-backend = "flit.buildapi"
 [project]
 name =  "py-project-toml"
 authors = [
-    {name = "Daniel Ciborowski", email = "dciborow@microsoft.com"},
+    {name = "Rafael Bachourian", email = "bachourian@gmail.com"},
 ]
 description = "Sample Python Project for creating a new Python Module"
 readme = "README.md"
@@ -27,29 +27,23 @@ spark = [
     "pyspark>=3.0.0"
 ]
 test = [
-    "bandit[toml]==1.7.5",
-    "black==23.3.0",
-    "check-manifest==0.49",
-    "flake8-bugbear==23.5.9",
+    "bandit[toml]",
+    "black",
+    "flake8-bugbear",
     "flake8-docstrings",
-    "flake8-formatter_junit_xml",
     "flake8",
     "flake8-pyproject",
-    "pre-commit==3.3.1",
-    "pylint==2.17.4",
-    "pylint_junit",
-    "pytest-cov==4.0.0",
-    "pytest-mock<3.10.1",
-    "pytest-runner",
-    "pytest==7.3.1",
+    "pre-commit",
+    "pylint",
+    "pytest",
     "pytest-github-actions-annotate-failures",
-    "shellcheck-py==0.9.0.2"
+    "tox"
 ]
 
 [project.urls]
-Documentation = "https://github.com/microsoft/python-package-template/tree/main#readme"
-Source = "https://github.com/microsoft/python-package-template"
-Tracker = "https://github.com/microsoft/python-package-template/issues"
+Documentation = "https://github.com/Reathe/python-package-template/tree/main#readme"
+Source = "https://github.com/Reathe/python-package-template"
+Tracker = "https://github.com/Reathe/python-package-template/issues"
 
 [tool.flit.module]
 name = "python_package"
@@ -138,14 +132,6 @@ commands =
 [testenv:integration]
 commands =
     pytest -m "integration" {posargs}
-
-[testenv:spark]
-extras = spark
-setenv =
-       PYSPARK_DRIVER_PYTHON = {envpython}
-       PYSPARK_PYTHON = {envpython}
-commands =
-    pytest -m "spark" {posargs}
 
 [testenv:all]
 extras = all
