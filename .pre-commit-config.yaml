@@ -30,7 +30,7 @@ repos:
         args: [--py37-plus]
 
   - repo: https://github.com/hadialqattan/pycln
-    rev: v1.2.5
+    rev: v2.2.1
     hooks:
       - id: pycln
         args: [--config=pyproject.toml]
@@ -52,9 +52,3 @@ repos:
       - id: rst-backticks
       - id: rst-directive-colons
       - id: rst-inline-touching-normal
-
-  - repo: https://github.com/mgedmin/check-manifest
-    rev: "0.47"
-    hooks:
-      - id: check-manifest
-        stages: [manual]
